@@ -1,0 +1,14 @@
+<div class="row py-5">
+    <div class="col-md-3">
+        @if (itemDetails.poster_path) {
+            <img class="w-100" [src]="baseUrl+itemDetails.poster_path" [alt]="itemDetails.original_title">
+        }
+        @if (itemDetails.profile_path) {
+            <img class="w-100" [src]="baseUrl+itemDetails.profile_path" [alt]="itemDetails.name">
+        }
+    </div>
+    <div class="col-md-9">
+        <h3>{{itemDetails.title}}{{itemDetails.name}}</h3>
+        <p class="text-white-50">{{itemDetails.overview}}{{itemDetails.biography}}</p>
+    </div>
+</div>

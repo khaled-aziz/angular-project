@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" routerLink="about" routerLinkActive="active">Noxe</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                @if (isLogged) {
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="home" routerLinkActive="active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="movies" routerLinkActive="active">Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="tv" routerLinkActive="active" >Tv show</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="people" routerLinkActive="active" >People</a>
+                    </li>
+                }
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                @if (isLogged) {
+                    <form class="d-flex me-4" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search...." aria-label="Search" [formControl] ='searchControl'>
+                        <button class="btn btn-outline-info" type="button" (click)="search()">Search</button>
+                    </form>
+                }
+                <div class="social d-flex justify-content-center align-items-center me-4">
+                    <i class="fa-brands fa-facebook "></i>
+                    <i class="fa-brands fa-spotify ms-2"></i>
+                    <i class="fa-brands fa-instagram ms-2"></i>
+                    <i class="fa-brands fa-youtube ms-2"></i>
+                </div>
+                @if (!isLogged) {
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="login" routerLinkActive="active">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="register" routerLinkActive="active">Register</a>
+                    </li>
+                }
+                @if (isLogged) {
+                    <li class="nav-item">
+                        <a class="nav-link active " (click)="logout()" >Logout</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</nav>

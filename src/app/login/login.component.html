@@ -1,0 +1,23 @@
+<div class="row mt-5">
+    <div class="col-8 m-auto">
+        <h2 class="mb-4">Login Form</h2>
+        <form  [formGroup]="loginform" (ngSubmit)="login()">
+            <div class="pb-3">
+                <label class="mb-2" for="name"> username: </label>
+                <input id="name" formControlName="username" class="form-control mb-2" type="text">
+            </div>
+            <div class="password mb-5">
+                <label class="mb-2" for="pass"> Password: </label>
+                <input id="pass" formControlName="password" class="form-control mb-2" type="password" autocomplete="new-password">
+            </div>
+            @if (!vaild) {
+                <div class="text-danger">
+                    <p>invalid username or password</p>
+                </div>
+            }
+            <p class="d-inline-block">don't have account ? <a class="text-decoration-none text-white-50"  routerLink="/register" routerLinkActive="active" >register</a></p>
+            <button class="btn float-end bg-info text-white " type="submit">login</button>
+            <div class="clearfix"></div>
+        </form>
+    </div>
+</div>

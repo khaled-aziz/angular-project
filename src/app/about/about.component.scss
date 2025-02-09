@@ -1,0 +1,12 @@
+@use '../../styles.scss' as *;
+.img{
+    background-image: url(/happy-employees-on-a-successful-team.webp);
+    background-position: center center;
+    background-size: cover;
+    height: 90vh;
+    color:  $bgColor;
+}
+.img-card{
+    width: 200px;
+    height: 200px;
+}

@@ -1,0 +1,5 @@
+@use '../../styles.scss' as *;
+.brd{
+    height: $borderHeight;
+    background-color: $borderColor;
+}
